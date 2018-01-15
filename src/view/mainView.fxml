@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="739.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainViewController">
+   <children>
+      <TabPane fx:id="tpMenu" layoutX="14.0" layoutY="14.0" prefHeight="497.0" prefWidth="600.0" side="LEFT" styleClass="mentStyle" stylesheets="@../application/application.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab id="employeesTab" fx:id="tbEmployees" text="Employees">
+               <content>
+                  <AnchorPane id="apAppointments" fx:id="apAppointments" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Label layoutX="277.0" layoutY="29.0" text="Employee Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="TvE" layoutY="267.0" onMouseClicked="#mouseClicked" prefHeight="294.0" prefWidth="711.0" style="-fx-background-color: #F6F6F6;">
+                           <columns>
+                              <TableColumn fx:id="tcEFirstName" prefWidth="119.0" text="First" />
+                              <TableColumn fx:id="tcELastName" prefWidth="121.0" text="Last" />
+                              <TableColumn fx:id="tcESsn" prefWidth="184.0" text="Ssn" />
+                              <TableColumn fx:id="tcESuperSsn" prefWidth="199.0" text="Super_Ssn" />
+                              <TableColumn fx:id="tcEDno" prefWidth="87.0" text="Dno" />
+                           </columns>
+                           <effect>
+                              <Blend mode="MULTIPLY" />
+                           </effect>
+                        </TableView>
+                        <Button fx:id="btnEInsert" layoutX="580.0" layoutY="225.0" mnemonicParsing="false" onAction="#insertE" text="Insert" />
+                        <Button fx:id="btnESearch" layoutX="639.0" layoutY="225.0" mnemonicParsing="false" onAction="#searchE" text="Search" />
+                        <Button fx:id="btnEDelete" layoutX="21.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteE" text="Delete" />
+                        <Label layoutX="112.0" layoutY="83.0" prefHeight="30.0" prefWidth="61.0" text="Name:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfEfname" layoutX="175.0" layoutY="78.0" prefHeight="39.0" prefWidth="167.0" promptText="First Name">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="dateFeedback" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="86.0" prefHeight="17.0" prefWidth="167.0" textAlignment="CENTER" textFill="#ff5619" visible="false">
+                           <font>
+                              <Font name="Georgia Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfElname" layoutX="369.0" layoutY="78.0" prefHeight="39.0" prefWidth="167.0" promptText="Last Name">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="130.0" layoutY="129.0" prefHeight="30.0" prefWidth="45.0" text="Ssn:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfESsn" layoutX="175.0" layoutY="124.0" prefHeight="39.0" prefWidth="167.0" promptText="Social Security#">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfESuperSsn" layoutX="369.0" layoutY="124.0" prefHeight="39.0" prefWidth="167.0" promptText="Supervisor's Ssn:">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="57.0" layoutY="175.0" prefHeight="30.0" prefWidth="111.0" text="Department:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfEDepartmentNum" layoutX="175.0" layoutY="171.0" prefHeight="39.0" prefWidth="167.0" promptText="Department#">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="elbE" layoutX="369.0" layoutY="182.0" text="ERROR:" textFill="#c60505" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab id="departmentsTab" fx:id="tbDepartments" text="Departments">
+               <content>
+                  <AnchorPane id="apPatients" fx:id="apPatients" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Label layoutY="354.0" text="Employee Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="TvD" layoutY="294.0" onMouseClicked="#mouseClicked" prefHeight="267.0" prefWidth="711.0" style="-fx-background-color: #F6F6F6;">
+                           <columns>
+                              <TableColumn fx:id="tcDDname" prefWidth="189.0" text="Dname" />
+                              <TableColumn fx:id="tcDDnumber" prefWidth="159.0" text="Dnumber" />
+                              <TableColumn fx:id="tcDMgrSsn" prefWidth="162.0" text="Mgr_ssn" />
+                              <TableColumn fx:id="tcDDLocation" prefWidth="200.0" text="DLocation" />
+                           </columns>
+                           <effect>
+                              <Blend mode="MULTIPLY" />
+                           </effect>
+                        </TableView>
+                        <Button fx:id="btnDInsert" layoutX="563.0" layoutY="256.0" mnemonicParsing="false" onAction="#insertD" text="Insert" />
+                        <Button fx:id="btnDDelete" layoutX="27.0" layoutY="256.0" mnemonicParsing="false" onAction="#deleteD" text="Delete" />
+                        <Button fx:id="btnDSearch" layoutX="628.0" layoutY="256.0" mnemonicParsing="false" onAction="#searchD" text="Search" />
+                        <Label layoutX="69.0" layoutY="199.0" prefHeight="30.0" prefWidth="94.0" text="Location:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfDManagerSsn" layoutX="168.0" layoutY="138.0" prefHeight="39.0" prefWidth="167.0" promptText="Manager SSN">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfDDLocation" layoutX="168.0" layoutY="194.0" prefHeight="39.0" prefWidth="167.0" promptText="Department Location">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfDDepartmentName" layoutX="168.0" layoutY="82.0" prefHeight="39.0" prefWidth="167.0" promptText="Department Name">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfDDepartmentNum" layoutX="357.0" layoutY="82.0" prefHeight="39.0" prefWidth="167.0" promptText="Department #">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="44.0" layoutY="87.0" prefHeight="30.0" prefWidth="113.0" text="Department:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mlabelD" layoutX="32.0" layoutY="143.0" prefHeight="30.0" prefWidth="122.0" text="Manager SSN:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="251.0" layoutY="29.0" text="Departments Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="elbD" layoutX="357.0" layoutY="205.0" text="ERROR:" textFill="#c60505" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="departmentsTab" fx:id="tbDepartments1" text="Projects">
+               <content>
+                  <AnchorPane id="apPatients" fx:id="apPatients1" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Label layoutY="354.0" text="Employee Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="TvP" layoutY="297.0" onMouseClicked="#mouseClicked" prefHeight="264.0" prefWidth="711.0" style="-fx-background-color: #F6F6F6;">
+                           <columns>
+                              <TableColumn fx:id="tcPPname" prefWidth="198.0" text="Pname" />
+                              <TableColumn fx:id="tcPPnumber" prefWidth="178.0" text="Pnumber" />
+                              <TableColumn fx:id="tcPPLocation" prefWidth="234.0" text="PLocation" />
+                              <TableColumn fx:id="tcPDepartmentNum" prefWidth="100.0" text="Dnum" />
+                           </columns>
+                           <effect>
+                              <Blend mode="MULTIPLY" />
+                           </effect>
+                        </TableView>
+                        <Button fx:id="btnPInsert" layoutX="563.0" layoutY="256.0" mnemonicParsing="false" onAction="#insertP" text="Insert" />
+                        <Button fx:id="btnPDelete" layoutX="27.0" layoutY="256.0" mnemonicParsing="false" onAction="#deleteP" text="Delete" />
+                        <Button fx:id="btnPSearch" layoutX="628.0" layoutY="256.0" mnemonicParsing="false" onAction="#searchP" text="Search" />
+                        <Label layoutX="44.0" layoutY="199.0" prefHeight="30.0" prefWidth="120.0" text="Cont. Department#:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfPPLocation" layoutX="168.0" layoutY="138.0" prefHeight="39.0" prefWidth="167.0" promptText="Project Location">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfPDepartmentNum" layoutX="168.0" layoutY="194.0" prefHeight="39.0" prefWidth="167.0" promptText="Department#">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfPProjectName" layoutX="168.0" layoutY="82.0" prefHeight="39.0" prefWidth="167.0" promptText="Project Name">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfPProjectNum" layoutX="357.0" layoutY="82.0" prefHeight="39.0" prefWidth="167.0" promptText="Project#">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="94.0" layoutY="87.0" prefHeight="30.0" prefWidth="113.0" text="Project:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="81.0" layoutY="143.0" prefHeight="30.0" prefWidth="88.0" text="Location:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="275.0" layoutY="29.0" text="Projects Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="elbP" layoutX="356.0" layoutY="205.0" text="ERROR:" textFill="#c60505" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="departmentsTab" fx:id="tbDepartments11" text="Works On">
+               <content>
+                  <AnchorPane id="apPatients" fx:id="apPatients11" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="btnWInsert" layoutX="196.0" layoutY="330.0" mnemonicParsing="false" onAction="#insertW" text="Insert" />
+                        <Button fx:id="btnWDelete" layoutX="251.0" layoutY="330.0" mnemonicParsing="false" onAction="#deleteW" text="Delete" />
+                        <Button fx:id="btnWSearch" layoutX="251.0" layoutY="372.0" mnemonicParsing="false" onAction="#searchW" text="Search" />
+                        <Label layoutX="69.0" layoutY="277.0" prefHeight="30.0" prefWidth="64.0" text="Hours:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfWProjectNum" layoutX="135.0" layoutY="211.0" prefHeight="39.0" prefWidth="167.0" promptText="Project#">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfWHours" layoutX="135.0" layoutY="272.0" prefHeight="39.0" prefWidth="167.0" promptText="#Hours">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfWESsn" layoutX="135.0" layoutY="149.0" prefHeight="39.0" prefWidth="167.0" promptText="Employee SSN">
+                           <font>
+                              <Font name="Georgia" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="40.0" layoutY="154.0" prefHeight="30.0" prefWidth="102.0" text="Employee:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="216.0" prefHeight="30.0" prefWidth="70.0" text="Project:" textFill="#010a66">
+                           <font>
+                              <Font name="Georgia Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="276.0" layoutY="25.0" text="Works On Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="355.0" layoutY="82.0" orientation="VERTICAL" prefHeight="476.0" prefWidth="6.0" />
+                        <TableView fx:id="TvW" layoutX="361.0" layoutY="81.0" onMouseClicked="#mouseClicked" prefHeight="479.0" prefWidth="344.0" style="-fx-background-color: #F6F6F6;">
+                           <columns>
+                              <TableColumn fx:id="tcWEssn" minWidth="0.0" prefWidth="162.0" text="Essn" />
+                              <TableColumn fx:id="tcWPno" minWidth="0.0" prefWidth="90.0" text="Pno" />
+                              <TableColumn fx:id="tcWHours" minWidth="0.0" prefWidth="91.0" text="Hours" />
+                           </columns>
+                           <effect>
+                              <Blend mode="MULTIPLY" />
+                           </effect>
+                        </TableView>
+                        <Label fx:id="elbW" layoutX="135.0" layoutY="429.0" text="ERROR:" textFill="#c60505" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="departmentsTab" fx:id="tbDepartments111" text="Custom">
+               <content>
+                  <AnchorPane id="apPatients" fx:id="apPatients111" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Label layoutY="354.0" text="Employee Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="TvC" layoutY="330.0" onMouseClicked="#mouseClicked" prefHeight="231.0" prefWidth="711.0" style="-fx-background-color: #F6F6F6;">
+                           <columns>
+                              <TableColumn fx:id="tc1" prefWidth="89.0" />
+                              <TableColumn fx:id="tc2" prefWidth="155.0" />
+                              <TableColumn fx:id="tc3" prefWidth="147.0" />
+                              <TableColumn fx:id="tc4" prefWidth="158.0" />
+                              <TableColumn fx:id="tc5" prefWidth="161.0" />
+                           </columns>
+                           <effect>
+                              <Blend mode="MULTIPLY" />
+                           </effect>
+                        </TableView>
+                        <Button fx:id="btnCSubmit" layoutX="592.0" layoutY="281.0" mnemonicParsing="false" onAction="#submitC" text="Submit Query" />
+                        <Label layoutX="287.0" layoutY="38.0" text="Custom Query">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="taCQuery" layoutX="28.0" layoutY="93.0" prefHeight="161.0" prefWidth="653.0" promptText="Custom Query" />
+                        <Label fx:id="elbC" layoutX="28.0" layoutY="254.0" text="ERROR:" textFill="#c60505" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="departmentsTab" fx:id="tbDepartments1111" text="Meta Data">
+               <content>
+                  <AnchorPane id="apPatients" fx:id="apPatients1111" prefHeight="200.0" prefWidth="613.0">
+                     <styleClass>
+                        <String fx:value="tab-label" />
+                        <String fx:value="tab" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <children>
+                        <Label layoutX="276.0" layoutY="38.0" text="Meta Data Menu">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="taMeta" editable="false" layoutX="50.0" layoutY="81.0" prefHeight="373.0" prefWidth="605.0" promptText="Meta Data" />
+                        <Button fx:id="btnMeta" layoutX="592.0" layoutY="490.0" mnemonicParsing="false" onAction="#meta" text="Get Data" />
+                        <TextField fx:id="tfMeta" layoutX="427.0" layoutY="490.0" promptText="Table Name" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
